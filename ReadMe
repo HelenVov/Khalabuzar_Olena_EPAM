@@ -1,0 +1,11 @@
+ "admin"
+                Login = "admin",
+                Password = "123"
+ "manager",
+                
+                Login = "manager",
+                Password = "123"
+ "Client",
+               
+                Login = "Client",
+                Password = "123"
