@@ -2,14 +2,22 @@
 @{
     ViewBag.Title = "GlobalSettings";
 }
-@using (Html.BeginForm("GlobalSettings", "Manager", FormMethod.Post))
-{
-    <div class="card form text-white bg-dark mb-3 row justify-content-center">
-    @Html.LabelFor(x => x.MaxDiscount)
-    @Html.ValidationMessageFor(x => x.MaxDiscount)
-    @Html.TextBoxFor(x => x.MaxDiscount)
-    
-    <button type="submit">Назначить новую макс.скидку</button>
+<div class="row justify-content-center ">
+    <div class="col-3 justify-content-center text-center">
+        @using (Html.BeginForm("GlobalSettings", "Manager", FormMethod.Post))
+        {
+            <div class="card text-white bg-dark mb-3  text-center ">
+                <p class="card-header bg-danger">Скидка:</p>
+                <div class="card-body">
+                    <div class="card-text">
+                        @Html.LabelFor(x => x.MaxDiscount,"Назначить новую максимальную скидку")
+                        @Html.ValidationMessageFor(x => x.MaxDiscount)
+                        @Html.TextBoxFor(x => x.MaxDiscount)
+                        <p></p>
+                        <button type="submit"id="more-details" class="btn btn-light">Назначить</button>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
-}
-
+</div>

@@ -3,25 +3,28 @@
 @{
     ViewBag.Title = "Главная";
 }
+    <div class="row justify-content-center">
+        <div class="col-10">
+            @foreach (var item in Model.Tours)
+            {
+                <div class=" text-center card text-white bg-dark mb-3 ">
+                    <p class="card-header bg-danger">@item.Name</p>
+                    <div class="card-body">
+                        <p class="card-subtitle mb-2 text-muted">Туда: @item.DepartureData.ToShortDateString() / Обратно: @item.ArrivalDate.ToShortDateString()</p>
+                        <div class="card-text">
+                            <p>Цена: @item.Price</p>
+                            <p>Гостиница: @item.Hotel.Name</p>
+                            <p>Количество людей: @item.PeopleCount</p>
+                            <p>Тип тура: @item.TourType</p>
+                        </div>
 
-@foreach (var item in Model.Tours)
-{
-    <div class="card text-white bg-dark mb-3 ">
-        <p class="card-header">@item.Name</p>
-        <div class="card-body">
-            <p class="card-subtitle mb-2 text-muted">Туда: @item.DepartureData.ToShortDateString() / Обратно: @item.ArrivalDate.ToShortDateString()</p>
-            <div class="card-text">
-                <p>Цена: @item.Price</p>
-                <p>Гостиница: @item.Hotel.Name</p>
-                <p>Количество людей: @item.PeopleCount</p>
-                <p>Тип тура: @item.TourType</p>
-            </div>
+                    </div>
+                    <button name="button" id="more-details" class="btn btn-light" type="submit">
+                        @Html.ActionLink("Подробнее", "MoreDetailsATour", new { id = item.Id })
+                    </button>
+                </div>
 
-        </div> 
-        <button name="button" id="more-details" type="submit">
-            @Html.ActionLink("Подробнее", "MoreDetailsATour", new { id = item.Id })
-        </button>
+            }
+        </div>
     </div>
-
-}
 

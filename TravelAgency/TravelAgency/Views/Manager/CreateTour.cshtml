@@ -2,45 +2,54 @@
 @{
     ViewBag.Title = "CreatTour";
 }
+    <div class="row justify-content-center ">
+        <div class="col-3 justify-content-center text-center">
+            @using (Html.BeginForm("CreateTour", "Manager", FormMethod.Post))
+            {
+            <div class="card text-white bg-dark mb-3  text-center ">
+                <p class="card-header bg-info">Создание тура:</p>
+                <div class="card-body">
+                    <div class="card-text">
 
-@using (Html.BeginForm("CreateTour", "Manager", FormMethod.Post))
-{
-    <div class="card form text-white bg-dark mb-3 row justify-content-center">
-        @Html.LabelFor(x => x.Tour.Name)
-        @Html.ValidationMessageFor(x => x.Tour.Name)
-        @Html.TextBoxFor(x => x.Tour.Name)
+                        @Html.LabelFor(x => x.Tour.Name, "Название тура:")
+                        @Html.ValidationMessageFor(x => x.Tour.Name)
+                        @Html.TextBoxFor(x => x.Tour.Name)
 
-        @Html.DropDownListFor(m => m.Tour.TourTypeId, Model.TourTypeSelect)
+                        <label>Тип тура</label>
+                        @Html.DropDownListFor(m => m.Tour.TourTypeId, Model.TourTypeSelect)
 
 
-        @Html.LabelFor(x => x.Tour.ArrivalDate)
-        @Html.ValidationMessageFor(x => x.Tour.ArrivalDate)
-        @Html.TextBoxFor(x => x.Tour.ArrivalDate, new { type = "date", name = "calendar" })
+                        @Html.LabelFor(x => x.Tour.ArrivalDate,"Дата начала тура:")
+                        @Html.ValidationMessageFor(x => x.Tour.ArrivalDate)
+                        @Html.TextBoxFor(x => x.Tour.ArrivalDate, new { type = "date", name = "calendar" })
 
-        @Html.LabelFor(x => x.Tour.DepartureData)
-        @Html.ValidationMessageFor(x => x.Tour.DepartureData)
-        @Html.TextBoxFor(x => x.Tour.DepartureData, new { type = "date", name = "calendar" })
+                        @Html.LabelFor(x => x.Tour.DepartureData,"Дата окончания тура:")
+                        @Html.ValidationMessageFor(x => x.Tour.DepartureData)
+                        @Html.TextBoxFor(x => x.Tour.DepartureData, new { type = "date", name = "calendar" })
 
-        @Html.LabelFor(x => x.Tour.PeopleCount)
-        @Html.ValidationMessageFor(x => x.Tour.PeopleCount)
-        @Html.TextBoxFor(x => x.Tour.PeopleCount)
+                        @Html.LabelFor(x => x.Tour.PeopleCount,"Количество людей:")
+                        @Html.ValidationMessageFor(x => x.Tour.PeopleCount)
+                        @Html.TextBoxFor(x => x.Tour.PeopleCount)
 
-        @Html.LabelFor(x => x.Tour.Price)
-        @Html.ValidationMessageFor(x => x.Tour.Price)
-        @Html.TextBoxFor(x => x.Tour.Price)
+                        @Html.LabelFor(x => x.Tour.Price,"Цена:")
+                        @Html.ValidationMessageFor(x => x.Tour.Price)
+                        @Html.TextBoxFor(x => x.Tour.Price)
 
-        @Html.LabelFor(x => x.Tour.Discount)
-        @Html.ValidationMessageFor(x => x.Tour.Discount)
-        @Html.TextBoxFor(x => x.Tour.Discount)
-        <div class="form-check">
-            <input class="form-check-input" id="Tour.Hot" name="Tour.Hot" value="true" type="checkbox" checked />
-            <label class="form-check-label" for="Tour.Hot">Hot</label><br />
+                        @Html.LabelFor(x => x.Tour.Discount,"Скидка на след. тур:")
+                        @Html.ValidationMessageFor(x => x.Tour.Discount)
+                        @Html.TextBoxFor(x => x.Tour.Discount)
+                        <div class="form-check">
+                            <input class="form-check-input" id="Tour.Hot" name="Tour.Hot" value="true" type="checkbox" checked />
+                            <label class="form-check-label" for="Tour.Hot">Горячий тур</label><br />
+                        </div>
+                        <label>Отель</label>
+                        @Html.DropDownListFor(m => m.Tour.HotelId, Model.HotelsSelect)
+
+                        <button type="submit" id="more-details" class="btn btn-light">Отправить</button>
+                    </div>
+                </div>
+            </div>
+            }
+
         </div>
-
-        @Html.DropDownListFor(m => m.Tour.HotelId, Model.HotelsSelect)
-
-        <button type="submit">Отправить</button>
     </div>
-
-
-}

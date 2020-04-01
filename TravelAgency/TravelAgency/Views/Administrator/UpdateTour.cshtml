@@ -2,68 +2,78 @@
 @{
     ViewBag.Title = "UpdateTour";
 }
-@using (Html.BeginForm("UpdateTour", "Administrator", FormMethod.Post))
+@using (Html.BeginForm("CreateTour", "Manager", FormMethod.Post))
 {
-    <div class="col-6">
-        <div class="card text-white bg-dark mb-3 ">
-            <p class="card-header">@Model.TourVm.Name</p>
-            <div class="card-body">
-                <p class="card-subtitle mb-2 text-muted">Туда: @Model.TourVm.DepartureData.ToShortDateString() / Обратно:  @Model.TourVm.ArrivalDate.ToShortDateString()</p>
-                <div class="card-text">
-                    <p>Цена: @Model.TourVm.Price</p>
-                    <p>Гостиница: @Model.TourVm.Hotel.Name</p>
-                    <p>Тип гостиницы: @Model.TourVm.Hotel.HotelType</p>
-                    <p>Адрес гостиницы:</p>
-                    <p>Город: @Model.TourVm.Hotel.HotelAddress.City</p>
-                    <p>Страна: @Model.TourVm.Hotel.HotelAddress.Country</p>
-                    <p>Улица: @Model.TourVm.Hotel.HotelAddress.Street</p>
-                    <p>Количество людей: @Model.TourVm.PeopleCount</p>
-                    <p>Тип тура: @Model.TourVm.TourType</p>
-                    <p>Горячий: @Model.TourVm.Hot</p>
+    <div class="row justify-content-center">
+
+        <div class="col-6">
+            <div class="card text-white bg-dark mb-3 text-center ">
+                <p class="card-header bg-info">@Model.TourVm.Name</p>
+                <div class="card-body">
+                    <p class="card-subtitle mb-2 text-muted">Туда: @Model.TourVm.DepartureData.ToShortDateString() / Обратно: @Model.TourVm.ArrivalDate.ToShortDateString()</p>
+                    <div class="card-text">
+                        <p>Цена: @Model.TourVm.Price</p>
+                        <p>Гостиница: @Model.TourVm.Hotel.Name</p>
+                        <p>Тип гостиницы: @Model.TourVm.Hotel.HotelType</p>
+                        <p>Адрес гостиницы:</p>
+                        <p>Город: @Model.TourVm.Hotel.HotelAddress.City</p>
+                        <p>Страна: @Model.TourVm.Hotel.HotelAddress.Country</p>
+                        <p>Улица: @Model.TourVm.Hotel.HotelAddress.Street</p>
+                        <p>Количество людей: @Model.TourVm.PeopleCount</p>
+                        <p>Тип тура: @Model.TourVm.TourType</p>
+                        <p>Горячий: @Model.TourVm.Hot</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-6">
-        @Html.HiddenFor(x=>x.Id)
+        <div class="col-3 justify-content-center text-center">
+            <div class="card text-white bg-dark mb-3  text-center ">
+                <p class="card-header bg-info">Изменение тура:</p>
+                <div class="card-body">
+                    <div class="card-text">
 
-        <div class="card form text-white bg-dark mb-3 ">
-            @Html.LabelFor(x => x.DataCreated.Tour.Name)
-            @Html.ValidationMessageFor(x => x.DataCreated.Tour.Name)
-            @Html.TextBoxFor(x => x.DataCreated.Tour.Name)
+                        @Html.HiddenFor(x => x.Id)
 
-            @Html.LabelFor(x => x.DataCreated.Tour.ArrivalDate)
-            @Html.ValidationMessageFor(x => x.DataCreated.Tour.ArrivalDate)
-            @Html.TextBoxFor(x => x.DataCreated.Tour.ArrivalDate, new { type = "date", name = "calendar" })
+                        @Html.LabelFor(x => x.DataCreated.Tour.Name, "Название тура:")
+                        @Html.ValidationMessageFor(x => x.DataCreated.Tour.Name)
+                        @Html.TextBoxFor(x => x.DataCreated.Tour.Name)
 
-            @Html.LabelFor(x => x.DataCreated.Tour.DepartureData)
-            @Html.ValidationMessageFor(x => x.DataCreated.Tour.DepartureData)
-            @Html.TextBoxFor(x => x.DataCreated.Tour.DepartureData, new { type = "date", name = "calendar" })
+                        @Html.LabelFor(x => x.DataCreated.Tour.ArrivalDate, "Дата начала тура:")
+                        @Html.ValidationMessageFor(x => x.DataCreated.Tour.ArrivalDate)
+                        @Html.TextBoxFor(x => x.DataCreated.Tour.ArrivalDate, new {type = "date", name = "calendar"})
 
-            @Html.LabelFor(x => x.DataCreated.Tour.PeopleCount)
-            @Html.ValidationMessageFor(x => x.DataCreated.Tour.PeopleCount)
-            @Html.TextBoxFor(x => x.DataCreated.Tour.PeopleCount)
+                        @Html.LabelFor(x => x.DataCreated.Tour.DepartureData, "Дата окончания тура:")
+                        @Html.ValidationMessageFor(x => x.DataCreated.Tour.DepartureData)
+                        @Html.TextBoxFor(x => x.DataCreated.Tour.DepartureData, new {type = "date", name = "calendar"})
 
-            @Html.LabelFor(x => x.DataCreated.Tour.Price)
-            @Html.ValidationMessageFor(x => x.DataCreated.Tour.Price)
-            @Html.TextBoxFor(x => x.DataCreated.Tour.Price)
+                        @Html.LabelFor(x => x.DataCreated.Tour.PeopleCount, "Количество людей:")
+                        @Html.ValidationMessageFor(x => x.DataCreated.Tour.PeopleCount)
+                        @Html.TextBoxFor(x => x.DataCreated.Tour.PeopleCount)
 
-            @Html.LabelFor(x => x.DataCreated.Tour.Discount)
-            @Html.ValidationMessageFor(x => x.DataCreated.Tour.Discount)
-            @Html.TextBoxFor(x => x.DataCreated.Tour.Discount)
+                        @Html.LabelFor(x => x.DataCreated.Tour.Price, "Цена:")
+                        @Html.ValidationMessageFor(x => x.DataCreated.Tour.Price)
+                        @Html.TextBoxFor(x => x.DataCreated.Tour.Price)
 
-            <div class="form-check">
-                <input class="form-check-input" id="DataCreated.Tour.Hot" name="DataCreated.Tour.Hot" value="true" type="checkbox" checked />
-                <label class="form-check-label" for="DataCreated.Tour.Hot">Hot</label><br />
+                        @Html.LabelFor(x => x.DataCreated.Tour.Discount, "Скидка на след. тур:")
+                        @Html.ValidationMessageFor(x => x.DataCreated.Tour.Discount)
+                        @Html.TextBoxFor(x => x.DataCreated.Tour.Discount)
+
+                        <div class="form-check">
+                            <input class="form-check-input" id="DataCreated.Tour.Hot" name="DataCreated.Tour.Hot" value="true" type="checkbox" checked/>
+                            <label class="form-check-label" for="DataCreated.Tour.Hot">Горячий тур</label><br/>
+                        </div>
+                        <label>Тип тура:</label>
+                        @Html.DropDownListFor(m => m.DataCreated.Tour.TourTypeId, Model.DataCreated.TourTypeSelect)
+                        <label>Отель:</label>
+                        @Html.DropDownListFor(m => m.DataCreated.Tour.HotelId, Model.DataCreated.HotelsSelect)
+
+                        <button type="submit" id="more-details" class="btn btn-light">Отправить</button>
+                    </div>
+                </div>
+
             </div>
-
-            @Html.DropDownListFor(m => m.DataCreated.Tour.TourTypeId, Model.DataCreated.TourTypeSelect)
-
-            @Html.DropDownListFor(m => m.DataCreated.Tour.HotelId, Model.DataCreated.HotelsSelect)
-
-            <button type="submit">Отправить</button>
         </div>
-
     </div>
+    
 }

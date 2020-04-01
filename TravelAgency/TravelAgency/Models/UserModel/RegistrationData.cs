@@ -11,7 +11,7 @@ namespace TravelAgency.Models.UserModel
         [DataType(DataType.Password)]
         [RegularExpression(".{6,}")]
         public string Password { get; set; }
-        
+        [DataType(DataType.Password)]
         [Compare(nameof(Password))]
         public string RepeatPassword { get; set; }
 

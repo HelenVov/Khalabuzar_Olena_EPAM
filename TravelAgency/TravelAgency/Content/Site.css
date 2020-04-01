@@ -17,11 +17,16 @@ textarea {
 }
 
 img {
-    width: 10%;
+    width: 14%;
+}
+
+
+#more-details {
+    margin: 0 auto;
 }
 
 header {
-    height: 30%
+    height: 30%;
 }
 
 footer {
@@ -36,3 +41,4 @@ footer {
     color: black;
     margin: 1%;
 }
+

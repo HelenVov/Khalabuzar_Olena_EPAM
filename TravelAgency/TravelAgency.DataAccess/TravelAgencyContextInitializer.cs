@@ -11,8 +11,8 @@ namespace TravelAgency.DataAccess
         {
             var user = new User()
             {
-                FirstName = "admin",
-                LastName = "admin",
+                FirstName = "Elena",
+                LastName = "Khalabuzar",
                 Login = "admin",
                 Password = "123",
                 MobilePhone = "+380958972428",
@@ -20,20 +20,20 @@ namespace TravelAgency.DataAccess
             };
             var user1 = new User()
             {
-                FirstName = "manager",
-                LastName = "manager",
+                FirstName = "Nata",
+                LastName = "Khalabuzar",
                 Login = "manager",
                 Password = "123",
-                MobilePhone = "+380958972428",
+                MobilePhone = "+380958971111",
                 UserType = UserType.Manager
             };
             var user2 = new User()
             {
-                FirstName = "Client",
-                LastName = "Client",
-                Login = "Client",
+                FirstName = "Vov",
+                LastName = "Khalabuzar",
+                Login = "client",
                 Password = "123",
-                MobilePhone = "+380958972428",
+                MobilePhone = "+380958972222",
                 UserType = UserType.Client
             };
 
@@ -43,36 +43,80 @@ namespace TravelAgency.DataAccess
 
             var hotelAddress = new HotelAddress
             {
-                City = "London",
-                Country = "GB",
-                Street = "Lenina 6b"
+                City = "Украина",
+                Country = "Одесса",
+                Street = "Набережна"
+            }; 
+            var hotelAddress1 = new HotelAddress
+            {
+                City = "Украина",
+                Country = "Киев",
+                Street = "Нижняя"
+            }; 
+            var hotelAddress2 = new HotelAddress
+            {
+                City = "Украина",
+                Country = "Донецк",
+                Street = "Мирная"
+            }; 
+            var hotelAddress3 = new HotelAddress
+            {
+                City = "Украина",
+                Country = "Харьков",
+                Street = "Университет"
             };
 
             hotelAddress = context.HotelAddresses.Add(hotelAddress);
+            hotelAddress = context.HotelAddresses.Add(hotelAddress1);
+            hotelAddress = context.HotelAddresses.Add(hotelAddress2);
+            hotelAddress = context.HotelAddresses.Add(hotelAddress3);
 
             var hotelType = new HotelType
             {
-                Name = "Hostel"
-            }; 
+                Name = "Хостел"
+            };
             var hotelType2 = new HotelType
             {
-                Name = "Hostel2"
+                Name = "Отель"
             };
-
+            var hotelType3 = new HotelType
+            {
+                Name = "Гостиница"
+            };
+            var hotelType4 = new HotelType
+            {
+                Name = "Апартаменты"
+            };
             hotelType = context.HotelTypes.Add(hotelType);
             hotelType2 = context.HotelTypes.Add(hotelType2);
+            hotelType3 = context.HotelTypes.Add(hotelType3);
+            hotelType4 = context.HotelTypes.Add(hotelType4);
 
 
             var hotel = new Hotel
             {
-                Name = "Hotel 1",
+                Name = "Звезда",
                 HotelAddress = hotelAddress,
                 HotelType = hotelType
             };
 
             var hotel2 = new Hotel
             {
-                Name = "Hotel 2",
+                Name = "Солнце",
+                HotelAddress = hotelAddress,
+                HotelType = hotelType2
+            };
+
+            var hotel3 = new Hotel
+            {
+                Name = "Луна",
+                HotelAddress = hotelAddress,
+                HotelType = hotelType
+            };
+
+            var hotel4 = new Hotel
+            {
+                Name = "Земля",
                 HotelAddress = hotelAddress,
                 HotelType = hotelType2
             };
@@ -82,33 +126,45 @@ namespace TravelAgency.DataAccess
 
             var tourType = new TourType
             {
-                Name = "Shoping"
+                Name = "Шопинг"
+            };
+
+            var tourType1 = new TourType
+            {
+                Name = "Отдых"
             };
 
             var tourType2 = new TourType
             {
-                Name = "resort"
+                Name = "Экскурсия"
+            };
+
+            var tourType3 = new TourType
+            {
+                Name = "Горнолыжный"
             };
 
             tourType = context.TourTypes.Add(tourType);
+            tourType1 = context.TourTypes.Add(tourType1);
             tourType2 = context.TourTypes.Add(tourType2);
+            tourType3 = context.TourTypes.Add(tourType3);
 
 
             var tour = new Tour
             {
-                Name = "1",
-                ArrivalDate = new DateTime(2020, 7, 11),
-                DepartureData = new DateTime(2020, 7, 2),
-                PeopleCount = 2,
-                Price = 1000,
-                TourType = tourType,
-                Hotel = hotel2
+                Name = "Звездная жизнь",
+                ArrivalDate = new DateTime(2020, 6,10 ),
+                DepartureData = new DateTime(2020, 6, 20),
+                PeopleCount = 5,
+                Price = 6000,
+                TourType = tourType1,
+                Hotel = hotel
             };
             var tour2 = new Tour
             {
-                Name = "1",
-                ArrivalDate = new DateTime(2020, 7, 11),
-                DepartureData = new DateTime(2020, 7, 2),
+                Name = "Любовь в моих глазах",
+                ArrivalDate = new DateTime(2020, 7, 9),
+                DepartureData = new DateTime(2020, 7, 15),
                 PeopleCount = 2,
                 Price = 5000,
                 TourType = tourType,
@@ -117,20 +173,20 @@ namespace TravelAgency.DataAccess
 
             }; var tour3 = new Tour
             {
-                Name = "1",
-                ArrivalDate = new DateTime(2020, 7, 11),
-                DepartureData = new DateTime(2020, 7, 2),
-                PeopleCount = 2,
-                Price = 5000,
-                TourType = tourType2,
-                Hotel = hotel
+                Name = "Берег грая",
+                ArrivalDate = new DateTime(2020, 8, 11),
+                DepartureData = new DateTime(2020, 8, 20),
+                PeopleCount = 7,
+                Price = 2000,
+                TourType = tourType3,
+                Hotel = hotel3
             };
             var tour4 = new Tour
             {
-                Name = "1",
-                ArrivalDate = new DateTime(2020, 7, 11),
-                DepartureData = new DateTime(2020, 7, 2),
-                PeopleCount = 2,
+                Name = "Весёлые каникулы",
+                ArrivalDate = new DateTime(2020, 7, 1),
+                DepartureData = new DateTime(2020, 7, 5),
+                PeopleCount = 10,
                 Price = 2000,
                 TourType = tourType2,
                 Hotel = hotel2,
@@ -144,7 +200,7 @@ namespace TravelAgency.DataAccess
 
             var max = new Settings()
             {
-                MaxUserDiscount = 50
+                MaxUserDiscount = 20
             };
 
             context.Settings.Add(max);
@@ -152,7 +208,7 @@ namespace TravelAgency.DataAccess
 
 
 
-           
+
         }
     }
 }

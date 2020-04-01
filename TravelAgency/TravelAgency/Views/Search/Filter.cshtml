@@ -1,27 +1,28 @@
 ﻿@model TravelAgency.Models.Model.FilterVM
 
-@using (Html.BeginForm("SearchTours", "Search", FormMethod.Post))
-{
-    <div class="card text-white bg-dark mb-3 ">
-    <p class="card-header">Выборка тура:</p>
-    <div class="card-body">
-    
-        <div class="card-text">
-            <label>Тип тура</label>
-            @Html.DropDownListFor(m => m.DataFilterVm.TourTypeId, Model.TourTypeSelect)
+        @using (Html.BeginForm("SearchTours", "Search", FormMethod.Post))
+        {
+            <div class="card text-white bg-dark mb-3  ">
+                <p class="card-header">Выборка тура:</p>
+                <div class="card-body">
 
-            <label>Тип отеля</label>
-            @Html.DropDownListFor(m => m.DataFilterVm.HotelTypeId, Model.HotelTypeSelect)
+                    <div class="card-text justify-content-center">
+                        <label>Тип тура:</label>
+                        @Html.DropDownListFor(m => m.DataFilterVm.TourTypeId, Model.TourTypeSelect)
 
-            @Html.LabelFor(x => x.DataFilterVm.Price, "Цена от " + Model.PriceMin + " до " + Model.PriceMax)
-            @Html.ValidationMessageFor(x => x.DataFilterVm.Price)
-            @Html.TextBoxFor(x => x.DataFilterVm.Price, new { placeholder = "Цена до " })
+                        <label>Тип отеля:</label>
+                        @Html.DropDownListFor(m => m.DataFilterVm.HotelTypeId, Model.HotelTypeSelect)
 
-            @Html.LabelFor(x => x.DataFilterVm.PeopleCount, "Количество людей от " + Model.PeopleCountMin + " до " + Model.PeopleCountMax)
-            @Html.ValidationMessageFor(x => x.DataFilterVm.PeopleCount)
-            @Html.TextBoxFor(x => x.DataFilterVm.PeopleCount)
+                        @Html.LabelFor(x => x.DataFilterVm.Price, "Цена от " + Model.PriceMin + " до " + Model.PriceMax)
+                        @Html.ValidationMessageFor(x => x.DataFilterVm.Price)
+                        @Html.TextBoxFor(x => x.DataFilterVm.Price)
 
-            <button type="submit">Отправить</button>
-        </div>
-    </div>
-    </div>}
+                        @Html.LabelFor(x => x.DataFilterVm.PeopleCount, "Количество людей от " + Model.PeopleCountMin + " до " + Model.PeopleCountMax)
+                        @Html.ValidationMessageFor(x => x.DataFilterVm.PeopleCount)
+                        @Html.TextBoxFor(x => x.DataFilterVm.PeopleCount)
+                    <p></p>
+                        <button type="submit" id="more-details" class="btn btn-light justify-content-center">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        }

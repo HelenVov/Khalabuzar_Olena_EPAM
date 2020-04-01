@@ -4,31 +4,34 @@
     
 
 }
+<div class="row justify-content-center">
+<div class="col-10">
+            <div class="card text-white bg-dark mb-3 text-center ">
+                <p class="card-header bg-info">@Model.Name</p>
+                <div class="card-body">
+                    <p class="card-subtitle mb-2 text-muted">Туда: @Model.DepartureData.ToShortDateString() / Обратно:  @Model.ArrivalDate.ToShortDateString()</p>
+                    <div class="card-text text-white">
+                        <p>Цена: @Model.Price</p>
+                        <p>Гостиница: @Model.Hotel.Name</p>
+                        <p>Тип гостиницы: @Model.Hotel.HotelType</p>
+                        <p>Адрес гостиницы:</p>
+                        <p>Город: @Model.Hotel.HotelAddress.City</p>
+                        <p>Страна: @Model.Hotel.HotelAddress.Country</p>
+                        <p>Улица: @Model.Hotel.HotelAddress.Street</p>
 
-    <div class="card text-white bg-dark mb-3 ">
-        <p class="card-header">@Model.Name</p>
-        <div class="card-body">
-            <p class="card-subtitle mb-2 text-muted">Туда: @Model.DepartureData.ToShortDateString() / Обратно:  @Model.ArrivalDate.ToShortDateString()</p>
-            <div class="card-text">
-                <p>Цена: @Model.Price</p>
-                <p>Гостиница: @Model.Hotel.Name</p>
-                <p>Тип гостиницы: @Model.Hotel.HotelType</p>
-                <p>Адрес гостиницы:</p>
-                <p>Город: @Model.Hotel.HotelAddress.City</p>
-                <p>Страна: @Model.Hotel.HotelAddress.Country</p>
-                <p>Улица: @Model.Hotel.HotelAddress.Street</p>
+                        <p>Количество людей: @Model.PeopleCount</p>
+                        <p>Тип тура: @Model.TourType</p>
+                        <p>Горячий: @Model.Hot</p>
 
-                <p>Количество людей: @Model.PeopleCount</p>
-                <p>Тип тура: @Model.TourType</p>
-                <p>Горячий: @Model.Hot</p>
+                    </div>
 
+                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <button name="button" id="more-details" class="btn btn-light" type="submit">
+                        @Html.ActionLink("Забронировать", "Book", new { idTour = Model.Id })
+                    </button>
+                }
             </div>
-
-        </div>
-        @if (User.Identity.IsAuthenticated)
-        {
-            <button name="button" id="more-details" type="submit">
-                @Html.ActionLink("Забронировать", "Book", new {idTour = Model.Id})
-            </button>
-        }
-        </div>
+            </div>
+            </div>

@@ -3,18 +3,24 @@
     ViewBag.Title = "ModificationTour";
 }
 
-@using (Html.BeginForm("ModificationTour", "Administrator", FormMethod.Post))
-{
-    <div class="card form text-white bg-dark mb-3 ">
+<div class="row justify-content-center ">
+    <div class="col-3 justify-content-center text-center">
+        @using (Html.BeginForm("ModificationTour", "Administrator", FormMethod.Post))
+        {
+            <div class="card text-white bg-dark mb-3  text-center ">
+                <p class="card-header bg-info">Модификация тура</p>
+                <div class="card-body">
+                    <div class="card-text">
+                        <p>Количество туров:@Model.CountTour</p>
 
-        <p>@Model.CountTour</p>
-
-        @Html.LabelFor(x => x.Id)
-        @Html.ValidationMessageFor(x => x.Id)
-        @Html.TextBoxFor(x => x.Id, new {placeholder = "Id tour"})
-
-
-        <button type="submit">Отправить</button>
+                        @Html.LabelFor(x => x.Id, "Введите Id:")
+                        @Html.ValidationMessageFor(x => x.Id)
+                        @Html.TextBoxFor(x => x.Id)
+                        <p></p>
+                        <button type="submit" id="more-details" class="btn btn-light">Модификация</button>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
-
-}
+</div>
