@@ -1,0 +1,32 @@
+﻿@model TravelAgency.Models.UserModel.RegistrationData
+@{
+    ViewBag.Title = "Registration";
+}
+@using (Html.BeginForm("Registration", "User", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.Firstname)
+    @Html.ValidationMessageFor(x => x.Firstname)
+    @Html.EditorFor(x => x.Firstname)
+
+    @Html.LabelFor(x => x.Lastname)
+    @Html.ValidationMessageFor(x => x.Lastname)
+    @Html.EditorFor(x => x.Lastname)
+
+    @Html.LabelFor(x => x.MobilePhone)
+    @Html.ValidationMessageFor(x => x.MobilePhone)
+    @Html.EditorFor(x => x.MobilePhone)
+
+    @Html.LabelFor(x => x.Login)
+    @Html.ValidationMessageFor(x => x.Login)
+    @Html.EditorFor(x => x.Login)
+
+    @Html.LabelFor(x => x.Password)
+    @Html.ValidationMessageFor(x => x.Password)
+    @Html.EditorFor(x => x.Password)
+
+    @Html.LabelFor(x => x.RepeatPassword)
+    @Html.ValidationMessageFor(x => x.RepeatPassword)
+    @Html.EditorFor(x => x.RepeatPassword)
+    
+    <button type="submit">Зарегистрироваться</button>
+}

@@ -1,0 +1,20 @@
+﻿@model TravelAgency.Models.Model.ModificationTourVM
+@{
+    ViewBag.Title = "ModificationTour";
+}
+
+@using (Html.BeginForm("ModificationTour", "Administrator", FormMethod.Post))
+{
+    <div class="card form text-white bg-dark mb-3 ">
+
+        <p>@Model.CountTour</p>
+
+        @Html.LabelFor(x => x.Id)
+        @Html.ValidationMessageFor(x => x.Id)
+        @Html.TextBoxFor(x => x.Id, new {placeholder = "Id tour"})
+
+
+        <button type="submit">Отправить</button>
+    </div>
+
+}

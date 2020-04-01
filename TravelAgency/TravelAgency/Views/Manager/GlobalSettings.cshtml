@@ -1,0 +1,15 @@
+﻿@model  TravelAgency.Models.Model.SettingsVM
+@{
+    ViewBag.Title = "GlobalSettings";
+}
+@using (Html.BeginForm("GlobalSettings", "Manager", FormMethod.Post))
+{
+    <div class="card form text-white bg-dark mb-3 row justify-content-center">
+    @Html.LabelFor(x => x.MaxDiscount)
+    @Html.ValidationMessageFor(x => x.MaxDiscount)
+    @Html.TextBoxFor(x => x.MaxDiscount)
+    
+    <button type="submit">Назначить новую макс.скидку</button>
+    </div>
+}
+

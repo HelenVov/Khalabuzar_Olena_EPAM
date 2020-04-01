@@ -1,0 +1,16 @@
+﻿@model TravelAgency.Models.UserModel.LoginData
+@{
+    ViewBag.Title = "Entrance";
+}
+@using (Html.BeginForm("Login", "User", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.Login)
+    @Html.ValidationMessageFor(x => x.Login)
+    @Html.EditorFor(x => x.Login, new { placeholder = "log" })
+
+    @Html.LabelFor(x => x.Password)
+    @Html.ValidationMessageFor(x => x.Password)
+    @Html.EditorFor(x => x.Password, new { placeholder = "pas " })
+
+    <button type="submit">Войти</button>
+}

@@ -1,0 +1,59 @@
+﻿@model TravelAgency.Models.UserModel.UserVM
+
+
+    @{
+        ViewBag.Title = "Profile";
+    }
+    <div class="row">
+        <div class="col-6">
+
+
+            <div class="card text-white bg-dark mb-3  text-center">
+                <p class="card-header">User profile</p>
+                <div class="card-body">
+                    <div class="card-text">
+                        <p>Имя: @Model.FirstName</p>
+                        <p>Фамилия: @Model.FirstName</p>
+                        <p>Номер: @Model.MobilePhone</p>
+                        <p>Логин: @Model.Login</p>
+                        <p>Дисконт: @Model.Discount </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-6">
+            @if (Model.Tours.Count > 0)
+            {
+                foreach (var item in Model.Tours)
+                {
+                    <div class="card text-white bg-dark mb-3  text-center">
+                        <p class="card-header">@item.Name</p>
+                        <div class="card-body">
+                            <p class="card-subtitle mb-2 text-muted">Туда: @item.DepartureData.ToShortDateString() / Обратно: @item.ArrivalDate.ToShortDateString()</p>
+                            <div class="card-text">
+                                <p>Цена: @item.Price</p>
+                                <p>Гостиница: @item.Hotel.Name</p>
+                                <p>Количество людей: @item.PeopleCount</p>
+                                <p>Тип тура: @item.TourType</p>
+                                <p>state: @item.TourState</p>
+                                <p>@item.Discount</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                }
+            }
+            else
+            {
+                <p>У вас нет бронирований</p>
+            }
+
+        </div>
+    </div>
+
+
+
+
