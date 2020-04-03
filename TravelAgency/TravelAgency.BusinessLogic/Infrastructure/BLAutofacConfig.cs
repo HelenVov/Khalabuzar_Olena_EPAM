@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
+using AutoMapper;
 using TravelAgency.BusinessLogic.Interfaces;
 using TravelAgency.BusinessLogic.Service;
 using TravelAgency.DataAccess;
@@ -26,7 +27,6 @@ namespace TravelAgency.BusinessLogic.Infrastructure
             builder.RegisterType<TourService>().As<ITourService>();
             builder.RegisterType<UserService>().As<IUserService>();
             builder.RegisterType<SettingsService>().As<ISettingsService>();
-
 
         }
     }

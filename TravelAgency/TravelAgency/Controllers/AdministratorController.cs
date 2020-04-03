@@ -17,8 +17,8 @@ namespace TravelAgency.Controllers
     {
         private readonly ITourService _tourService;
         private readonly IUserService _userService;
-        private readonly Mapper _mapper;
-        public AdministratorController(ITourService tourService, Mapper mapper, IUserService userService)
+        private readonly IMapper _mapper;
+        public AdministratorController(ITourService tourService, IMapper mapper, IUserService userService)
         {
             _tourService = tourService;
             _mapper = mapper;

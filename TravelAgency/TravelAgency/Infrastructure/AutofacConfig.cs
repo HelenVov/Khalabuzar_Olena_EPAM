@@ -26,7 +26,7 @@ namespace TravelAgency.Infrastructure
             builder.RegisterType<Authentication.Authentication>().As<IAuthentication>().InstancePerRequest();
 
 
-            builder.Register(c => new Mapper(mapperConfig)).AsSelf();
+            builder.Register(c => new Mapper(mapperConfig)).As<IMapper>();
 
             var container = builder.Build();
 

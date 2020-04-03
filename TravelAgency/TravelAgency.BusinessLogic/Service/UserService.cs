@@ -13,9 +13,9 @@ namespace TravelAgency.BusinessLogic.Service
     {
         private readonly IRepository<User> _userRepository;
         
-        private readonly Mapper _mapper;
+        private readonly IMapper _mapper;
 
-        public UserService(Mapper mapper, IRepository<User> userRepository)
+        public UserService(IMapper mapper, IRepository<User> userRepository)
         {
             _mapper = mapper;
             _userRepository = userRepository;

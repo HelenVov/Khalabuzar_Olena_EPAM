@@ -18,10 +18,10 @@ namespace TravelAgency.Controllers
     {
         private readonly IAuthentication _authentication;
         private readonly IUserService _userService;
-        private readonly Mapper _mapper;
+        private readonly IMapper _mapper;
 
 
-        public UserController(IAuthentication authentication, IUserService userService, Mapper mapper)
+        public UserController(IAuthentication authentication, IUserService userService, IMapper mapper)
         {
             _authentication = authentication;
             _userService = userService;

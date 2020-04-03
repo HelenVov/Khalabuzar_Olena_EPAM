@@ -14,8 +14,8 @@ namespace TravelAgency.Controllers
     public class SearchController : Controller
     {
         private readonly ITourService _tourService;
-        private readonly Mapper _mapper;
-        public SearchController(ITourService tourService, Mapper mapper)
+        private readonly IMapper _mapper;
+        public SearchController(ITourService tourService, IMapper mapper)
         {
             _tourService = tourService;
             _mapper = mapper;

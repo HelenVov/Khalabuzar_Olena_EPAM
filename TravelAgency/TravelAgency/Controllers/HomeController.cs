@@ -16,8 +16,8 @@ namespace TravelAgency.Controllers
     public class HomeController : Controller
     {
         private readonly ITourService _tourService;
-        private readonly Mapper _mapper;
-        public HomeController(ITourService tourService, Mapper mapper)
+        private readonly IMapper _mapper;
+        public HomeController(ITourService tourService, IMapper mapper)
         {
             _tourService = tourService;
             _mapper = mapper;

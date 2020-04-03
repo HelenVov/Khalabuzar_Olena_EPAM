@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.DataAccess", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelAgency.Authentication", "TravelAgency.Authentication\TravelAgency.Authentication.csproj", "{AC9C7228-4238-4367-9591-60E1D213BBBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest.BusinessLogic", "UnitTest.BusinessLogic\UnitTest.BusinessLogic.csproj", "{9EC1968E-8ABA-4494-B965-14B1D196E9B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{AC9C7228-4238-4367-9591-60E1D213BBBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC9C7228-4238-4367-9591-60E1D213BBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC9C7228-4238-4367-9591-60E1D213BBBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EC1968E-8ABA-4494-B965-14B1D196E9B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EC1968E-8ABA-4494-B965-14B1D196E9B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EC1968E-8ABA-4494-B965-14B1D196E9B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EC1968E-8ABA-4494-B965-14B1D196E9B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

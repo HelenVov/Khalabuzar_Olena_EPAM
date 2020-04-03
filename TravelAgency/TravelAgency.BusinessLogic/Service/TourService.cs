@@ -20,9 +20,9 @@ namespace TravelAgency.BusinessLogic.Service
         private readonly IRepository<User> _userRepository;
         private readonly IRepository<Settings> _settingsRepository;
 
-        private readonly Mapper _mapper;
+        private readonly IMapper _mapper;
 
-        public TourService(IRepository<Tour> tourRepository, Mapper mapper, IRepository<Hotel> hotelRepository, IRepository<TourType> tourTypeRepository, IRepository<HotelType> hotelTypeRepository, IRepository<User> userRepository, IRepository<Settings> settingsRepository)
+        public TourService(IRepository<Tour> tourRepository, IMapper mapper, IRepository<Hotel> hotelRepository, IRepository<TourType> tourTypeRepository, IRepository<HotelType> hotelTypeRepository, IRepository<User> userRepository, IRepository<Settings> settingsRepository)
         {
             _tourRepository = tourRepository;
             _mapper = mapper;
